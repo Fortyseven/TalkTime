@@ -56,10 +56,8 @@ public class TalkTime : MonoBehaviour
     {
         if (!_is_playing) return;
 
-        int sample_position = 0;
         float duration = Time.time - _time_started;
-        sample_position = Mathf.RoundToInt(Clip.samples * (duration / Clip.length));
-
+        int sample_position = Mathf.RoundToInt(Clip.samples * (duration / Clip.length));;
         float avg = GetAverageFromWindow(sample_position);
 
         if (duration >= Clip.length) {
