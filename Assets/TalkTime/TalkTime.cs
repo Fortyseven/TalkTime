@@ -6,7 +6,7 @@ using System.Text;
 public class TalkTime : MonoBehaviour
 {
     public AudioClip Clip;
-    public int WINDOW_SIZE = 1024;
+    public int WindowSize = 1024;
     public float HeadBopMagnitude = 1.0f;
     // The frame index is used to represent loudness, with 0 being
     // the quietest (silent), and SpriteFrames.Length-1 being the loudest
@@ -95,7 +95,7 @@ public class TalkTime : MonoBehaviour
         float sum = 0;
         int c = 0;
 
-        float sz = sample_pos + WINDOW_SIZE;
+        float sz = sample_pos + WindowSize;
         if (sz > _samples.Length) {
             sz = _samples.Length - sample_pos;
         }
