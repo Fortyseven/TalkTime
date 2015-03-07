@@ -43,7 +43,7 @@ public class TalkTime : MonoBehaviour
 
     public void Play()
     {
-        InitClip();
+        StartPlayback();
     }
 
     public void Play( AudioClip clip )
@@ -68,7 +68,7 @@ public class TalkTime : MonoBehaviour
         DoHeadBop(avg);
     }
 
-    void DoHeadBop(float avg)
+    private void DoHeadBop(float avg)
     {
         Vector3 pos = transform.position;
         pos.y = _org_y + (avg / 10 * HeadBopMagnitude);
@@ -106,7 +106,7 @@ public class TalkTime : MonoBehaviour
         return (sum / c) / _max_amplitude;
     }
 
-    void InitClip()
+    void StartPlayback()
     {
         _audiosource.clip = this.Clip;
         _samples = new float[Clip.samples * Clip.channels];
