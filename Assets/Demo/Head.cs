@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Head : MonoBehaviour
 {
@@ -7,12 +6,12 @@ public class Head : MonoBehaviour
 
     private TalkTime _talktime;
 
-    void Start()
+    public void Start()
     {
         _talktime = GetComponent<TalkTime>();
     }
 
-    public void OnClip(int id)
+    public void OnClip( int id )
     {
         _talktime.Play( Clips[ id ] );
     }
